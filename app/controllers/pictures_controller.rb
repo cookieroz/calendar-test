@@ -1,12 +1,14 @@
 class PicturesController < ApplicationController
+  
+  respond_to :js, :html, :json
+  
+  before_filter :load_apt
   # GET /pictures
   # GET /pictures.json
   def index
 
-    @apt = Apt.find(params[:apt_id])
-
     @pictures = @apt.pictures
-    render :json => @pictures.collect { |p| p.to_jq_upload }.to_json
+    #render :json => @pictures.collect { |p| p.to_jq_upload }.to_json
 
     respond_to do |format|
       format.html # index.html.erb
@@ -48,29 +50,15 @@ class PicturesController < ApplicationController
   # POST /pictures
   # POST /pictures.json
   def create
-    #p_attr = params[:picture]
-   # p_attr[:image] = params[:picture][:image].first if params[:picture][:image].class == Array
-
-    @picture = Picture.new
-    @picture.image = params[:picture][:path].shift
-
-    @apt = Apt.find(params[:apt_id])
-    #@picture = @apt.pictures.build(p_attr)
-
+    
+    @picture = @apt.pictures.new(params[:picture])
     if @picture.save
-      respond_to do |format|
-        format.html {
-          render :json => [@picture.to_jq_upload].to_json,
-                 :content_type => 'text/html',
-                 :layout => false
-        }
-        format.json {
-          render :json => [@picture.to_jq_upload].to_json
-        }
-      end
+      @message = "Picture has been uploaded successfully"
     else
-      render :json => [{:error => "custom_failure"}], :status => 304
+      @message = "Picture cannot be saved"
     end
+    
+    respond_with @apt
   end
 
   # PUT /pictures/1
@@ -116,4 +104,11 @@ class PicturesController < ApplicationController
       format.js
     end
   end
+  
+  private
+  
+  def load_apt
+    @apt = Apt.find(params[:apt_id])
+  end
+  
 end

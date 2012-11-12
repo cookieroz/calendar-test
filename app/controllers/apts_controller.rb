@@ -4,7 +4,8 @@ class AptsController < ApplicationController
   def index
     @apts = Apt.all
     @pictures = Picture.all
-    render :json => @pictures.collect { |p| p.to_jq_upload }.to_json
+    #render :json => @pictures.collect { |p| p.to_jq_upload }.to_json
+    
 
     respond_to do |format|
       format.html # index.html.erb
@@ -16,7 +17,7 @@ class AptsController < ApplicationController
   # GET /apts/1.json
   def show
     @apt = Apt.find(params[:id])
-
+    
     @reservations_by_start_date = @apt.reservations.group_by(&:start_date)
     @reservations_by_due_date = @apt.reservations.group_by(&:due_date)
     # @reservations_by_save_dates = @reservations.group_by(&:save_dates)
@@ -26,10 +27,6 @@ class AptsController < ApplicationController
 
     #@res_ranges = @apt.reservations.day_ranges(params[:start_date],
                                         #  params[:due_date])
-
-    @picture = @apt.pictures.build
-    @pictures = Picture.scoped(:conditions => [ 'apt_id = ?', @apt.id ] )
-        #find(:all, :conditions  => [ 'gallery_id = ?', @gallery.id ])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -62,22 +59,22 @@ class AptsController < ApplicationController
   def create
     @apt = Apt.new(params[:apt])
 
-    @picture = Picture.new
-    @picture.avatar = params[:picture][:path].shift
-    if @picture.save
-      respond_to do |format|
-        format.html {                                         #(html response is for browsers using iframe sollution)
-          render :json => [@picture.to_jq_upload].to_json,
-                 :content_type => 'text/html',
-                 :layout => false
-        }
-        format.json {
-          render :json => [@picture.to_jq_upload].to_json
-        }
-      end
-    else
-      render :json => [{:error => "custom_failure"}], :status => 304
-    end
+    #@picture = Picture.new
+    #@picture.avatar = params[:picture][:path].shift
+    # if @picture.save
+      # respond_to do |format|
+        # format.html {                                         #(html response is for browsers using iframe sollution)
+          # render :json => [@picture.to_jq_upload].to_json,
+                 # :content_type => 'text/html',
+                 # :layout => false
+        # }
+        # format.json {
+          # render :json => [@picture.to_jq_upload].to_json
+        # }
+      # end
+    # else
+      # render :json => [{:error => "custom_failure"}], :status => 304
+    # end
 
     respond_to do |format|
       if @apt.save

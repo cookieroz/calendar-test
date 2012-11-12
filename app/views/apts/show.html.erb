@@ -1,6 +1,14 @@
+
 <p id="notice"><%= notice %></p>
 
 <h1><%= @apt.apt_name %></h1>
+<div id="apt-pictures-area">
+	<%= render 'pictures/images' %>
+</div>
+<%= button_tag 'Add pictures', :class => 'btn', :id => 'bt-add-image'%>
+<div id="frmUploadImage">
+	<%= render 'pictures/form'%>
+</div>
 
 <p><%= @apt.body %></p>
 
@@ -11,6 +19,7 @@
         <%= link_to ">", date: @date.months_since(4) %>
       </h2>
       <%= calendar @date do |date| %>
+      	<% if date >=  %>
         <%= date.day %>
           <% if @reservations_by_start_date[date] %>
               <% @reservations_by_start_date[date].each do |reservation| %>
@@ -53,7 +62,11 @@
           <% end %>
       <% end %>
     </div>
-
+<script type="text/javascript">
+	$(document).ready(function() {
+		var st_date = '<%=  %>'
+	});
+</script>
 
 <%= link_to 'Edit', edit_apt_path(@apt) %> |
 <%= link_to 'Back', apts_path %>

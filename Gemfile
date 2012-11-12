@@ -31,6 +31,11 @@ gem 'jquery-ui-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 
+gem 'rb-readline', '~>0.4.2'
+gem 'execjs'
+
+gem 'therubyracer'
+
 group :development, :grades, :test do
   gem "launchy"
   gem "pry"
