@@ -13,3 +13,10 @@
  *= require fullcalendar
  *= require_tree .
  */
+
+.selected-date {
+	background-color: #3399FF;
+	height: 35px;
+	width: 44px;
+	color:white;
+}

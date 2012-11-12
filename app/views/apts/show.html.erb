@@ -18,14 +18,36 @@
         <%= @date.strftime("%B %Y") %>
         <%= link_to ">", date: @date.months_since(4) %>
       </h2>
+      <% start_date = nil
+          	 due_date = nil
+          	 resevr = nil
+      %>
       <%= calendar @date do |date| %>
-      	<% if date >=  %>
-        <%= date.day %>
+      
           <% if @reservations_by_start_date[date] %>
-              <% @reservations_by_start_date[date].each do |reservation| %>
-                  <%= link_to reservation.name, reservation %>
+          	  
+              <% @reservations_by_start_date[date].each do |reservation| 
+              		start_date = reservation.start_date
+              		due_date = reservation.due_date
+              		resevr = reservation
+              %>
               <% end %>
           <% end %>
+          
+          <% if(!start_date.nil? && !due_date.nil?) %>
+          		
+	          <% if(date >= start_date && date <= due_date) %>
+		      	  <div class="selected-date">
+		      	  	<% if date == start_date %>
+		      	  		<%= link_to resevr.name, resevr %>
+	      	  		<% end %>
+		      	  	<%= date.day %>
+		      	  </div>
+	      	  <% end %>
+      	  <% else %>
+      	  	<%= date.day %>
+          <% end %>
+          
       <% end %>
 
       <h2 class="month"><%= @date.months_since(1).strftime("%B %Y") %></h2>
