@@ -1,0 +1,8 @@
+<div class="image-area">
+	<% @apt.pictures.each do |image| %>
+	<span class="small-image">
+		<%= image.id %>
+		<%= image_tag image.image.url(:thumb).to_s %>
+	</span>
+	<% end %>
+</div>

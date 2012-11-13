@@ -6,14 +6,8 @@ class PicturesController < ApplicationController
   # GET /pictures
   # GET /pictures.json
   def index
-
     @pictures = @apt.pictures
-    #render :json => @pictures.collect { |p| p.to_jq_upload }.to_json
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @pictures }
-    end
+    render :json => @pictures.collect { |p| p.to_jq_upload }.to_json
   end
 
   # GET /pictures/1
@@ -50,15 +44,28 @@ class PicturesController < ApplicationController
   # POST /pictures
   # POST /pictures.json
   def create
+    logger = Logger.new('log/debug.log')
+    logger.info('-------Log for create image-------')
+    #logger.info(params[:picture].to_s)
+    @picture = @apt.pictures.new
     
-    @picture = @apt.pictures.new(params[:picture])
+    @picture.image = params[:picture][:path].shift
     if @picture.save
-      @message = "Picture has been uploaded successfully"
+      logger.info('Saved')
+      logger.info(@picture.image.url.to_s)
+      respond_to do |format|
+        format.html { #(html response is for browsers using iframe sollution)
+          render :json => [@picture.to_jq_upload].to_json,
+          :content_type => 'text/html',
+          :layout => false
+        }
+        format.json {
+          render :json => [@picture.to_jq_upload].to_json
+        }
+      end
     else
-      @message = "Picture cannot be saved"
+      render :json => [{:error => "custom_failure"}], :status => 304
     end
-    
-    respond_with @apt
   end
 
   # PUT /pictures/1
@@ -83,14 +90,9 @@ class PicturesController < ApplicationController
   # DELETE /pictures/1
   # DELETE /pictures/1.json
   def destroy
-    @apt = Apt.find(params[:apt_id])
-    @picture = @apt.pictures.find(params[:id])
+    @picture = Picture.find(params[:id])
     @picture.destroy
-
-    respond_to do |format|
-      format.html { redirect_to apt_pictures_url }
-      format.js
-    end
+    render :json => true
   end
 
   def make_default

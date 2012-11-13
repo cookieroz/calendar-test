@@ -2,10 +2,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1><%= @apt.apt_name %></h1>
-<div id="apt-pictures-area">
-	<%= render 'pictures/images' %>
-</div>
-<%= button_tag 'Add pictures', :class => 'btn', :id => 'bt-add-image'%>
+
 <div id="frmUploadImage">
 	<%= render 'pictures/form'%>
 </div>

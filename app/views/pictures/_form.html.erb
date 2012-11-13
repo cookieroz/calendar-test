@@ -1,14 +1,13 @@
-<%= form_for [@apt, @apt.pictures.new], :html => { :multipart => true, :id => "fileupload", :remote => true  } do |img| %>
+
+<%= form_for [@apt, @apt.pictures.new], :html => { :multipart => true, :id => "fileupload", :remote => true } do |f| %>
         <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
-        <%= %>
         <div class="row fileupload-buttonbar">
             <div class="span7">
                 <!-- The fileinput-button span is used to style the file input field as button -->
-                
                 <span class="btn btn-success fileinput-button">
                     <i class="icon-plus icon-white"></i>
                     <span><%= t('fileupload.add_files') %></span>
-                    <%= img.file_field :image%>
+                    <%= f.file_field :path, :multiple => true %>
                 </span>
                 <button type="submit" class="btn btn-primary start">
                     <i class="icon-upload icon-white"></i>

@@ -2,7 +2,7 @@ Calendar::Application.routes.draw do
   resources :apts do
     resources :pictures
   end
-  match '/apts/(:apt_id)/pictures/(:id)/remove' => 'pictures#destroy'
+  match '/pictures/(:id)/remove' => 'pictures#destroy', :as => 'picture'
   resources :shared
 
   resource :calendar, :only => [:show]
