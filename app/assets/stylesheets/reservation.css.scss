@@ -1,0 +1,54 @@
+// Place all the styles related to the reservations controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#reservations .calendar {
+  border-collapse: collapse;
+  width: 30%;
+
+  td, th {
+    font-family: "Lucida Grande", arial, helvetica, sans-serif;
+    font-size: .5em;
+    padding: .25em;
+    border: 1px solid #999;
+    width: 14%;
+  }
+
+  th {
+    background: #DDD;
+    color: #666;
+    text-align: center;
+  }
+
+  td {
+    background: #FFF;
+    color: #777;
+    height: 35px;
+    vertical-align: top;
+    font-size: 1em;
+    a {
+      font-size: .2em;
+      padding: 0;
+    }
+  }
+
+  .notmonth, .notmonth a { color: #CCC; }
+  .today { background-color: #D7F2FF; }
+  .reserved { background-color: #DCDCDC; }
+}
+
+#reservations .month {
+  margin: 0;
+  padding-bottom: 10px;
+  text-align: center;
+  font-size: 22px;
+  a {
+    text-decoration: none;
+    padding: 0 10px;
+    color: #999;
+  }
+}
+
+#reservations ul {
+  font-size: 5px;
+  padding: 0;
+}

@@ -1,0 +1,41 @@
+<%= form_for @apt, :html => { :multipart => true, :id => "fileupload"  } do |f| %>
+  <% if @apt.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@apt.errors.count, "error") %> prohibited this apt from being saved:</h2>
+
+      <ul>
+      <% @apt.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :apt_name %><br />
+    <%= f.text_field :apt_name %>
+  </div>
+
+    <%= f.fields_for :reservations  do |res| %>
+      <div class="field">
+        <%= res.label :start_date %><br />
+        <%= res.text_field :start_date, class: "start" %>
+      </div>
+      <div class="field">
+        <%= res.label :due_date %><br />
+        <%= res.text_field :due_date, class: "end" %>
+      </div>
+    <% end %>
+
+  <div class="field">
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+  </div>
+
+    <%= render "shared/fileupload" %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+

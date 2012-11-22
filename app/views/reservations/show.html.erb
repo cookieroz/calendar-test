@@ -1,0 +1,65 @@
+<h1><%= @reservation.name %></h1>
+
+<p class="info">Start date <%= @reservation.start_date.strftime("%B %e, %Y") %></p>
+<p class="info">Due date <%= @reservation.due_date.strftime("%B %e, %Y") %></p>
+<p class="info">Uniqname <%= @reservation.uniqname %></p>
+
+<%= simple_format @reservation.description %>
+
+<p>
+  <%= link_to "Edit reservation", edit_reservation_path(@reservation) %> |
+  <%= link_to "Back to reservations", reservations_path %>
+</p>
+
+<div id="reservations">
+  <h2 class="month">
+    <%= link_to "<", date: @date.months_ago(4) %>
+    <%= @date.strftime("%B %Y") %>
+    <%= link_to ">", date: @date.months_since(4) %>
+  </h2>
+  <%= calendar @date do |date| %>
+      <%= date.day %>
+      <% if @day_ranges[date] %>
+          <% @day_ranges[date].each do |reservation| %>
+              <%= link_to reservation.name, reservation %>
+          <% end %>
+      <% end %>
+  <% end %>
+
+  <h2 class="month"><%= @date.months_since(1).strftime("%B %Y") %></h2>
+  <%= calendar @date.months_since(1) do |date| %>
+      <%= date.day %>
+      <% if @reservations_by_start_date[date] %>
+          <% @reservations_by_start_date[date].each do |reservation| %>
+              <%= link_to reservation.name, reservation %>
+          <% end %>
+      <% end %>
+  <% end %>
+
+  <h2 class="month"><%= @date.months_since(2).strftime("%B %Y") %></h2>
+  <%= calendar @date.months_since(2) do |date| %>
+      <%= date.day %>
+      <% if @reservations_by_start_date[date] %>
+          <ul class="reserved">
+            <% @reservations_by_start_date[date].each do |reservation| %>
+                <li><%= link_to reservation.name, reservation %></li>
+            <% end %>
+          </ul>
+      <% end %>
+  <% end %>
+
+  <h2 class="month"><%= @date.months_since(3).strftime("%B %Y") %></h2>
+  <%= calendar @date.months_since(3) do |date| %>
+      <%= date.day %>
+      <% if @reservations_by_start_date[date] %>
+          <ul class="reserved">
+            <% @reservations_by_start_date[date].each do |reservation| %>
+                <li><%= link_to reservation.name, reservation %></li>
+            <% end %>
+          </ul>
+      <% end %>
+  <% end %>
+
+</div>
+
+<%= render 'calendars/show' %>

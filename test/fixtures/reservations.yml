@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  uniqname: MyString
+  name: MyString
+  start_date: 2012-09-11
+  due_date: 2012-09-11
+  description: MyText
+
+two:
+  uniqname: MyString
+  name: MyString
+  start_date: 2012-09-11
+  due_date: 2012-09-11
+  description: MyText
