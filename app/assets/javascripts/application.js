@@ -15,5 +15,6 @@
 //= require jquery-ui
 //= require jquery.ui.datepicker
 //= require jquery.rest
+//= require jquery-fileupload
 //= require fullcalendar
 //= require_tree .
