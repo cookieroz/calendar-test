@@ -24,6 +24,9 @@ class AptsController < ApplicationController
 
     @day_ranges = :start_date..:due_date
 
+    first = @apt.reservations.first.start_date.beginning_of_month.beginning_of_week(:sunday)
+    @reservations = @apt.reservations.where("start_date > ?", first)
+
     #@res_ranges = @apt.reservations.day_ranges(params[:start_date],
                                         #  params[:due_date])
 
@@ -84,9 +87,16 @@ class AptsController < ApplicationController
   # PUT /apts/1.json
   def update
     @apt = Apt.find(params[:id])
+    apt_date = params[:apt]
+    picture_ids = apt_date.delete :picture_ids
 
     respond_to do |format|
-      if @apt.update_attributes(params[:apt])
+      if @apt.update_attributes(apt_date)
+        picture_ids.split(',').each do |id|
+          pic = Picture.find id
+          pic.update_attributes(apt_id: @apt.id)
+        end
+
         format.html { redirect_to @apt, notice: 'Apt was successfully updated.' }
         format.json { head :no_content }
       else

@@ -1,10 +1,10 @@
 module CalendarHelper
 
-  def calendar(date = Date.today, &block)
-    Calendar.new(self, date, block).table
+  def calendar(date = Date.today, reservations, &block)
+    Calendar.new(self, date, reservations, block).table
   end
 
-  class Calendar < Struct.new(:view, :date, :callback)
+  class Calendar < Struct.new(:view, :date, :reservations, :callback)
     HEADER = %w[Sun Mon Tue Wed Thu Fri Sat]
     START_DAY = :sunday
 
@@ -37,30 +37,25 @@ module CalendarHelper
     end
 
     def week_rows
-      first = date.beginning_of_month.beginning_of_week(START_DAY)
-      revs = Reservation.where("start_date > ?", first).map { |reserv| {s: reserv.start_date,e: reserv.due_date } }
-
       weeks.map do |week|
         content_tag :tr do
-          week.map { |day| day_cell(day, revs) }.join.html_safe
+          week.map { |day| day_cell(day, reservations) }.join.html_safe
         end
       end.join.html_safe
     end
 
-    def day_cell(day, revs)
-      content_tag :td, view.capture(day, &callback), class: day_classes(day, revs)
+    def day_cell(day, reservations)
+      content_tag :td, view.capture(day, &callback), class: day_classes(day, reservations)
     end
 
     # @param [Object] day
-    def day_classes(day, revs)
+    def day_classes(day, reservations)
       classes = []
       classes << "today" if day == Date.today
       classes << "notmonth" if day.month != date.month
       reserved = false
-      revs.each do |r|
-        if day > r[:s] && day < r[:e]
-          reserved = true
-        end
+      reservations.each do |r|
+        reserved = true if day >= r.start_date && day <= r.due_date
       end
       classes << "reserved" if reserved
       classes.empty? ? nil : classes.join(" ")
