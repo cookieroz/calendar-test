@@ -37,23 +37,32 @@ module CalendarHelper
     end
 
     def week_rows
+      first = date.beginning_of_month.beginning_of_week(START_DAY)
+      revs = Reservation.where("start_date > ?", first).map { |reserv| {s: reserv.start_date,e: reserv.due_date } }
+
       weeks.map do |week|
         content_tag :tr do
-          week.map { |day| day_cell(day) }.join.html_safe
+          week.map { |day| day_cell(day, revs) }.join.html_safe
         end
       end.join.html_safe
     end
 
-    def day_cell(day)
-      content_tag :td, view.capture(day, &callback), class: day_classes(day)
+    def day_cell(day, revs)
+      content_tag :td, view.capture(day, &callback), class: day_classes(day, revs)
     end
 
     # @param [Object] day
-    def day_classes(day)
+    def day_classes(day, revs)
       classes = []
       classes << "today" if day == Date.today
       classes << "notmonth" if day.month != date.month
-      classes << "reserved" if day == Reservation.last.start_date
+      reserved = false
+      revs.each do |r|
+        if day > r[:s] && day < r[:e]
+          reserved = true
+        end
+      end
+      classes << "reserved" if reserved
       classes.empty? ? nil : classes.join(" ")
     end
 
