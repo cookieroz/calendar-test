@@ -4,7 +4,7 @@ class AptsController < ApplicationController
   def index
     @apts = Apt.all
     @pictures = Picture.all
-    render :json => @pictures.collect { |p| p.to_jq_upload }.to_json
+    #render :json => @pictures.collect { |p| p.to_jq_upload }.to_json
 
     respond_to do |format|
       format.html # index.html.erb
