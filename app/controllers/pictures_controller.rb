@@ -51,10 +51,10 @@ class PicturesController < ApplicationController
     #p_attr = params[:picture]
    # p_attr[:image] = params[:picture][:image].first if params[:picture][:image].class == Array
 
-    @picture = Picture.new
-    @picture.image = params[:picture][:path].shift
+    @picture = Picture.new(params[:picture])
+    #@picture.image = params[:picture][:path].shift
 
-    @apt = Apt.find(params[:apt_id])
+    #@apt = Apt.find(params[:apt_id])
     #@picture = @apt.pictures.build(p_attr)
 
     if @picture.save

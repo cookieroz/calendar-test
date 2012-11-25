@@ -6,7 +6,7 @@
                 <span class="btn btn-success fileinput-button">
                     <i class="icon-plus icon-white"></i>
                     <span><%= t('fileupload.add_files') %></span>
-                    <%= img.file_field :path, :multiple => true %>
+                    <%= img.file_field :image, :multiple => true, name: "picture[image]" %>
                 </span>
                 <button type="submit" class="btn btn-primary start">
                     <i class="icon-upload icon-white"></i>

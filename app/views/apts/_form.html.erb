@@ -1,4 +1,5 @@
-<%= form_for @apt, :html => { :multipart => true, :id => "fileupload"  } do |f| %>
+<%= form_for @apt, :html => { :multipart => true  } do |f| %>
+  <%= f.hidden_field :picture_ids, value: "" %>
   <% if @apt.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@apt.errors.count, "error") %> prohibited this apt from being saved:</h2>
@@ -31,11 +32,8 @@
     <%= f.text_area :body %>
   </div>
 
-    <%= render "shared/fileupload" %>
-
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
-
-
+<%= render "shared/fileupload" %>

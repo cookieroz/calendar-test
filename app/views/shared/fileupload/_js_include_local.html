@@ -3,7 +3,18 @@
         'use strict';
 
         // Initialize the jQuery File Upload widget:
-        $('#fileupload').fileupload();
+        $('#fileupload').fileupload().bind('fileuploaddone', function (e, data) {
+          var pid = data.result[0].id;
+          var val = $("#apt_picture_ids").val();
+          var new_val = "";
+
+          if(val.length > 0){
+            new_val = val.concat(',').concat(pid.toString());
+          }else{
+            new_val = pid.toString();
+          }
+          $("#apt_picture_ids").val(new_val);
+        });
 
         // Enable iframe cross-domain access via redirect option:
         $('#fileupload').fileupload(
