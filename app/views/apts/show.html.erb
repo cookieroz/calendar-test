@@ -54,6 +54,10 @@
       <% end %>
     </div>
 
+    <% @apt.pictures.each do |pic| %>
+      <%= image_tag pic.image.url %>
+    <% end %>
+
 
 <%= link_to 'Edit', edit_apt_path(@apt) %> |
 <%= link_to 'Back', apts_path %>
