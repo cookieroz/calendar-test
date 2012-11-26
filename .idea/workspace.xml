@@ -22,7 +22,7 @@
       <file leaf-file-name="picture.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/picture.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="66" selection-start="526" selection-end="526" vertical-scroll-proportion="0.0">
+            <state line="19" column="66" selection-start="545" selection-end="545" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -31,16 +31,8 @@
       <file leaf-file-name="_form.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/apts/_form.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="4" selection-start="919" selection-end="919" vertical-scroll-proportion="-20.625">
-              <folding>
-                <marker date="1353545761000" expanded="true" signature="142:371" placeholder="..." />
-                <marker date="1353545761000" expanded="true" signature="252:360" placeholder="..." />
-                <marker date="1353545761000" expanded="true" signature="405:483" placeholder="..." />
-                <marker date="1353545761000" expanded="true" signature="558:672" placeholder="..." />
-                <marker date="1353545761000" expanded="true" signature="698:806" placeholder="..." />
-                <marker date="1353545761000" expanded="true" signature="843:912" placeholder="..." />
-                <marker date="1353545761000" expanded="true" signature="976:1005" placeholder="..." />
-              </folding>
+            <state line="33" column="4" selection-start="941" selection-end="941" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -48,16 +40,34 @@
       <file leaf-file-name="apts_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/apts_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="73" selection-start="324" selection-end="324" vertical-scroll-proportion="0.0">
+            <state line="12" column="73" selection-start="371" selection-end="371" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Gemfile" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Gemfile" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="29" selection-start="685" selection-end="685" vertical-scroll-proportion="0.3478261">
+            <state line="28" column="35" selection-start="603" selection-end="603" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/apts/show.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="58" column="17" selection-start="2147" selection-end="2147" vertical-scroll-proportion="-16.125">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="image_uploader.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/uploaders/image_uploader.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="39" column="43" selection-start="1254" selection-end="1254" vertical-scroll-proportion="0.5833333">
               <folding />
             </state>
           </provider>
@@ -66,7 +76,7 @@
       <file leaf-file-name="_fileupload.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/shared/_fileupload.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="26" selection-start="809" selection-end="809" vertical-scroll-proportion="-7.5">
+            <state line="12" column="26" selection-start="834" selection-end="834" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -84,7 +94,7 @@
       <file leaf-file-name="pictures_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/pictures_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="16" selection-start="1669" selection-end="1669" vertical-scroll-proportion="0.0">
+            <state line="69" column="16" selection-start="1689" selection-end="1689" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -112,7 +122,6 @@
         <option value="$PROJECT_DIR$/app/views/reservations/_show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/apts/show.html.erb" />
         <option value="$PROJECT_DIR$/db/migrate/20121121210908_create_pictures.rb" />
-        <option value="$PROJECT_DIR$/app/uploaders/image_uploader.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20121121234648_changepicturename.rb" />
         <option value="$PROJECT_DIR$/app/controllers/reservations_controller.rb" />
         <option value="$PROJECT_DIR$/app/models/reservation.rb" />
@@ -125,6 +134,7 @@
         <option value="$PROJECT_DIR$/app/controllers/pictures_controller.rb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/Gemfile" />
+        <option value="$PROJECT_DIR$/app/uploaders/image_uploader.rb" />
       </list>
     </option>
   </component>
@@ -160,8 +170,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="RailsProjectView" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -468,6 +476,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="RailsProjectView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -593,13 +603,6 @@
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_OPTIONS" VALUE="" />
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugSession" factoryName="Remote">
-      <JSRemoteDebuggerConfigurationSettings>
-        <option name="engineId" />
-        <option name="fileUrl" />
-      </JSRemoteDebuggerConfigurationSettings>
-      <method />
-    </configuration>
     <configuration default="true" type="CucumberRunConfigurationType" factoryName="Cucumber">
       <predefined_log_file id="RUBY_CUCUMBER" enabled="true" />
       <module name="" />
@@ -631,6 +634,13 @@
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="CUCUMBER_RUNNER_PATH" VALUE="" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_RUNNER" VALUE="false" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SETTINGS_VERSION" VALUE="2" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Remote">
+      <JSRemoteDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSRemoteDebuggerConfigurationSettings>
       <method />
     </configuration>
     <configuration default="false" name="test" type="RakeRunConfigurationType" factoryName="Rake">
@@ -751,7 +761,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31746033" sideWeight="0.67121214" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32539684" sideWeight="0.67121214" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287879" sideWeight="0.49602723" order="7" side_tool="true" content_ui="tabs" />
@@ -820,32 +830,14 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/models/reservation.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="62" selection-start="349" selection-end="349" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/apt.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="65" selection-start="364" selection-end="364" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20121121210908_create_pictures.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="17" selection-start="133" selection-end="143" vertical-scroll-proportion="0.105820104">
-          <folding />
-        </state>
+        <state line="4" column="17" selection-start="133" selection-end="143" vertical-scroll-proportion="0.105820104" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20121122002342_add_apt_idto_pictures.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="75" selection-start="132" selection-end="132" vertical-scroll-proportion="0.21164021">
-          <folding />
-        </state>
+        <state line="8" column="75" selection-start="132" selection-end="132" vertical-scroll-proportion="0.21164021" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/schema.rb">
@@ -857,71 +849,55 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/picture.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="66" selection-start="526" selection-end="526" vertical-scroll-proportion="0.0">
+        <state line="19" column="66" selection-start="545" selection-end="545" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/shared/fileupload/_js_include_local.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="38.875">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="38.875" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/shared/fileupload/_queue.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/shared/fileupload/_js_include_remote.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="30.125">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="30.125" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/shared/fileupload/_index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="23" selection-start="1532" selection-end="1532" vertical-scroll-proportion="0.75783974">
-          <folding />
-        </state>
+        <state line="29" column="23" selection-start="1532" selection-end="1532" vertical-scroll-proportion="0.75783974" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/apts_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="73" selection-start="324" selection-end="324" vertical-scroll-proportion="0.0">
+        <state line="12" column="73" selection-start="371" selection-end="371" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/apts/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="4" selection-start="919" selection-end="919" vertical-scroll-proportion="-20.625">
-          <folding>
-            <marker date="1353545761000" expanded="true" signature="142:371" placeholder="..." />
-            <marker date="1353545761000" expanded="true" signature="252:360" placeholder="..." />
-            <marker date="1353545761000" expanded="true" signature="405:483" placeholder="..." />
-            <marker date="1353545761000" expanded="true" signature="558:672" placeholder="..." />
-            <marker date="1353545761000" expanded="true" signature="698:806" placeholder="..." />
-            <marker date="1353545761000" expanded="true" signature="843:912" placeholder="..." />
-            <marker date="1353545761000" expanded="true" signature="976:1005" placeholder="..." />
-          </folding>
+        <state line="33" column="4" selection-start="941" selection-end="941" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/shared/_fileupload.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="26" selection-start="809" selection-end="809" vertical-scroll-proportion="-7.5">
+        <state line="12" column="26" selection-start="834" selection-end="834" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/pictures_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="16" selection-start="1669" selection-end="1669" vertical-scroll-proportion="0.0">
+        <state line="69" column="16" selection-start="1689" selection-end="1689" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -935,7 +911,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="29" selection-start="685" selection-end="685" vertical-scroll-proportion="0.3478261">
+        <state line="28" column="35" selection-start="603" selection-end="603" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/apts/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="17" selection-start="2147" selection-end="2147" vertical-scroll-proportion="-16.125">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/uploaders/image_uploader.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="43" selection-start="1254" selection-end="1254" vertical-scroll-proportion="0.5833333">
           <folding />
         </state>
       </provider>
