@@ -63,9 +63,9 @@ class AptsController < ApplicationController
   # POST /apts
   # POST /apts.json
   def create
-    apt_date = params[:apt]
-    picture_ids = apt_date.delete :picture_ids
-    @apt = Apt.new(apt_date)
+    apt_data = params[:apt]
+    picture_ids = apt_data.delete :picture_ids
+    @apt = Apt.new(apt_data)
 
     respond_to do |format|
       if @apt.save
@@ -84,11 +84,11 @@ class AptsController < ApplicationController
   # PUT /apts/1.json
   def update
     @apt = Apt.find(params[:id])
-    apt_date = params[:apt]
-    picture_ids = apt_date.delete :picture_ids
+    apt_data = params[:apt]
+    picture_ids = apt_data.delete :picture_ids
 
     respond_to do |format|
-      if @apt.update_attributes(apt_date)
+      if @apt.update_attributes(apt_data)
         update_pictures_with_apt_id picture_ids, @apt
 
         format.html { redirect_to @apt, notice: 'Apt was successfully updated.' }
