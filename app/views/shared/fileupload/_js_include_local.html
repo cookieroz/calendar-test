@@ -16,6 +16,11 @@
           $("#apt_picture_ids").val(new_val);
         });
 
+        $(".files").sortable({
+          items: 'tr',
+        });
+
+
         // Enable iframe cross-domain access via redirect option:
         $('#fileupload').fileupload(
                 'option',
