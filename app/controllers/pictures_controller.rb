@@ -95,13 +95,13 @@ class PicturesController < ApplicationController
   # DELETE /pictures/1
   # DELETE /pictures/1.json
   def destroy
-    @apt = Apt.find(params[:apt_id])
-    @picture = @apt.pictures.find(params[:id])
+    #@apt = Apt.find(params[:apt_id])
+    @picture = Picture.find(params[:id])
     @picture.destroy
 
     respond_to do |format|
       format.html { redirect_to apt_pictures_url }
-      format.js
+      format.js { render :json => true }
     end
   end
 

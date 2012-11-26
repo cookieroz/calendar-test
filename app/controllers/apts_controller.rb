@@ -69,10 +69,7 @@ class AptsController < ApplicationController
 
     respond_to do |format|
       if @apt.save
-        picture_ids.split(',').each do |id|
-          pic = Picture.find id
-          pic.update_attributes(apt_id: @apt.id)
-        end
+        update_pictures_with_apt_id picture_ids, @apt
 
         format.html { redirect_to @apt, notice: 'Apt was successfully created.' }
         format.json { render json: @apt, status: :created, location: @apt }
@@ -92,10 +89,7 @@ class AptsController < ApplicationController
 
     respond_to do |format|
       if @apt.update_attributes(apt_date)
-        picture_ids.split(',').each do |id|
-          pic = Picture.find id
-          pic.update_attributes(apt_id: @apt.id)
-        end
+        update_pictures_with_apt_id picture_ids, @apt
 
         format.html { redirect_to @apt, notice: 'Apt was successfully updated.' }
         format.json { head :no_content }
@@ -115,6 +109,14 @@ class AptsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to apts_url }
       format.json { head :no_content }
+    end
+  end
+
+  private
+  def update_pictures_with_apt_id picture_ids, apt
+    picture_ids.split(',').each do |id|
+      pic = Picture.where(id: id).first
+      pic.update_attributes(apt_id: apt.id) if pic.present?
     end
   end
 end
