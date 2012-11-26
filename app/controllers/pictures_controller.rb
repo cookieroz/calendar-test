@@ -100,7 +100,7 @@ class PicturesController < ApplicationController
     @picture.destroy
 
     respond_to do |format|
-      format.html { redirect_to apt_pictures_url }
+      format.html { redirect_to :back }
       format.js { render :json => true }
     end
   end

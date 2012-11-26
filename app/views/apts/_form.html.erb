@@ -36,4 +36,10 @@
     <%= f.submit %>
   </div>
 <% end %>
+
+<% @apt.pictures.each do |pic| %>
+  <%= image_tag pic.image.url %>
+  <%= link_to "x", picture_path(pic), method: :delete %>
+<% end %>
+
 <%= render "shared/fileupload" %>
